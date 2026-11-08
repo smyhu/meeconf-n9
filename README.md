@@ -7,6 +7,8 @@ Bulk setup of e-mail accounts for the built-in **Mail** app of the Nokia N9
 mailboxes on the phone keyboard is tedious. MeeConf creates them for you, one by
 one by hand or all at once from a CSV file made in Excel or OnlyOffice.
 
+![MeeConf screenshots](art/screenshots.png)
+
 ## Features
 
 - **Account list** of the Mail app. Tap an account to see its servers; *Edit as new*
@@ -58,10 +60,10 @@ in the order they were created, the default one first).
 
 ## Install
 
-Copy `dist/meeconf-n9_0.1.2_all.deb` to the phone and as root:
+Copy `dist/meeconf-n9_0.1.3_all.deb` to the phone and as root:
 
 ```
-dpkg -i meeconf-n9_0.1.2_all.deb
+dpkg -i meeconf-n9_0.1.3_all.deb
 ```
 
 Needs `python`, `python-pyside`, `python-dbus` and `qt-components` (all on a

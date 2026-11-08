@@ -93,14 +93,21 @@ Page {
         model: rows
         delegate: Item {
             width: rowList.width
-            height: 96
+            height: 124
             Column {
                 anchors { left: parent.left; right: parent.right; leftMargin: 16; rightMargin: 16; verticalCenter: parent.verticalCenter }
                 Label {
                     width: parent.width
-                    text: (model.name != "" ? model.name : "?") + "  <font color=\"#8c8c8c\">" + model.email + "</font>"
+                    text: model.name != "" ? model.name : "?"
                     font.pixelSize: 24
                     elide: Text.ElideRight
+                }
+                Label {
+                    width: parent.width
+                    text: model.email
+                    font.pixelSize: 20
+                    color: "#b0b0b0"
+                    elide: Text.ElideMiddle
                 }
                 Label {
                     width: parent.width

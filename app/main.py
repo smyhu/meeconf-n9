@@ -17,7 +17,7 @@ APP_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, APP_DIR)
 import core
 
-APP_VERSION = '0.1.2'
+APP_VERSION = '0.1.3'
 BUS_NAME = 'com.github.smyhu.meeconf'
 LANGUAGES = ('pl', 'en')
 

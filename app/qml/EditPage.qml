@@ -93,9 +93,17 @@ Page {
                 inputMethodHints: Qt.ImhNoPredictiveText | Qt.ImhNoAutoUppercase
             }
 
-            CheckBox {
-                id: isDefault
-                text: S.t(uiLang, "defaultBox")
+            Row {
+                width: parent.width
+                spacing: 16
+                CheckBox { id: isDefault }
+                Label {
+                    width: parent.width - isDefault.width - 16
+                    anchors.verticalCenter: isDefault.verticalCenter
+                    text: S.t(uiLang, "defaultBox")
+                    wrapMode: Text.WordWrap
+                    MouseArea { anchors.fill: parent; onClicked: isDefault.checked = !isDefault.checked }
+                }
             }
 
             SectionLabel { text: S.t(uiLang, "incoming") }
