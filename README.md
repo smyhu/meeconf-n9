@@ -60,10 +60,10 @@ in the order they were created, the default one first).
 
 ## Install
 
-Copy `dist/meeconf-n9_0.1.3_all.deb` to the phone and as root:
+Copy `dist/meeconf-n9_0.1.4_all.deb` to the phone and as root:
 
 ```
-dpkg -i meeconf-n9_0.1.3_all.deb
+dpkg -i meeconf-n9_0.1.4_all.deb
 ```
 
 Needs `python`, `python-pyside`, `python-dbus` and `qt-components` (all on a

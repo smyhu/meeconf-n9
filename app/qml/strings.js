@@ -60,6 +60,8 @@ var texts = {
     "errServer":   { "pl": "brak serwera (nieznany dostawca)", "en": "server missing (unknown provider)" },
     "errHost":     { "pl": "błędna nazwa serwera", "en": "invalid server name" },
     "errPort":     { "pl": "błędny port", "en": "invalid port" },
+    "errPortIn":   { "pl": "port nie pasuje do typu konta (IMAP: 993/143, POP3: 995/110)", "en": "port does not match the account type (IMAP: 993/143, POP3: 995/110)" },
+    "errPortOut":  { "pl": "port wysyłki to port odbioru (SMTP: 465/587/25)", "en": "outgoing port is an incoming one (SMTP: 465/587/25)" },
     "errSsl":      { "pl": "szyfrowanie: none, ssl albo tls", "en": "encryption: none, ssl or tls" },
     "errType":     { "pl": "typ: imap albo pop", "en": "type: imap or pop" },
     "errExists":   { "pl": "takie konto już jest", "en": "this account already exists" },

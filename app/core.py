@@ -191,6 +191,13 @@ def normalize(a):
             return r, 'errServer'
         if not HOST_RE.match(r[k]):
             return r, 'errHost'
+    # a port of another protocol makes Mail hang until timeout and ask for the
+    # password again and again (IMAP on 995 gets a POP3 greeting)
+    wrong_in = {'imap': (110, 995, 25, 465, 587), 'pop': (143, 993, 25, 465, 587)}
+    if r['in_port'] in wrong_in[r['in_type']]:
+        return r, 'errPortIn'
+    if r['out_port'] in (110, 143, 993, 995):
+        return r, 'errPortOut'
     return r, None
 
 
@@ -302,7 +309,7 @@ class Signon(object):
         info = dbus.Dictionary({
             'UserName': dbus.String(user),
             'Secret': dbus.String(''),
-            'StoreSecret': dbus.Boolean(False),
+            'StoreSecret': dbus.Boolean(True),  # 'remember password', else lost on reboot
             'Caption': dbus.String('email'),
             'Realms': dbus.Array([], signature='s'),
             'AuthMethods': dbus.Dictionary(
